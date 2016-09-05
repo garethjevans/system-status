@@ -8,5 +8,9 @@ node('golang') {
 	sh 'go get github.com/Masterminds/glide'
     sh 'tree'
     sh './bin/glide update'
+	sh 'go build'
+
+    stage 'Test'
+    sh 'go test -v'
 }
 
