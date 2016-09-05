@@ -1,6 +1,6 @@
 node('golang') {
 	stage 'Build'
 	env.GOPATH = pwd()
-	sh 'go version'
-    sh 'go env'
+	sh 'go get github.com/Masterminds/glide'
+    sh './bin/glide update'
 }
