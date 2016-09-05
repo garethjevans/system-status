@@ -11,7 +11,11 @@ node('golang') {
 
     stage 'Test'
 	sh 'go test -v'
-    sh 'go test -v > test.output'
+	try {
+    sh 'go test -v > test.output 2>&1'
+	} catch (e) {
+		echo 'Caught error'
+	}
 
     stage 'Report'
     sh 'cat test.output | ./bin/go2xunit -output tests.xml'
