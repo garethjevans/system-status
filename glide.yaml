@@ -1,4 +1,4 @@
-package: system-status
+package: github.com/garethjevans/system-status
 import:
 - package: github.com/newrelic/go-agent
   version: 1.0.0
