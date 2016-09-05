@@ -10,7 +10,6 @@ node('golang') {
 	sh 'go build'
 
     stage 'Test'
-	sh 'go test -v'
 	try {
     sh 'go test -v > test.output 2>&1'
 	} catch (e) {
