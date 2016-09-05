@@ -15,7 +15,7 @@ func Test_StatusHandler(t *testing.T) {
 	res := httptest.NewRecorder()
 	StatusHandler(res, req)
 
-	exp := "OK\n"
+	exp := "OK"
 	act := res.Body.String()
 	if exp != act {
 		t.Fatalf("Expected %s got %s", exp, act)
